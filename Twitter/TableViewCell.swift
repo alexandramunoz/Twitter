@@ -22,23 +22,36 @@ class TableViewCell: UITableViewCell {
     
     var tweet: Tweet!{
     didSet{
-    timeStampLabel.text = "\(tweet.createdAtString)"
+    timeStampLabel.text = tweet.createdAtString
     tweetLabel.text = tweet.text
-    likesCountLabel.text = "\(tweet.likeCount)"
-    retweetsCountLabel.text = "\(tweet.retweetCount)"
+    likesCountLabel.text = String(tweet.user!.likeCount!)
+    retweetsCountLabel.text = String(tweet.retweetCount!)
         profileImageView.setImageWithURL(NSURL(string:(tweet.user?.profileImageUrl)!)!)
     nameLabel.text = tweet.user!.name
-    usernameLabel.text = tweet.user!.screenname
+    usernameLabel.text = "@\(String(tweet.user!.screenname!))"
     }
+    }
+   
+    
+    
+    
+    @IBAction func didPressRetweet(sender: AnyObject) {
+        self.tweet.retweetCount!++
+        retweetsCountLabel.text = ("\(tweet.retweetCount!)")
     }
     
+    @IBAction func didPressFavorite(sender: AnyObject) {
+        self.tweet.user!.likeCount!++
+        likesCountLabel.text = ("\(tweet.user!.likeCount!)")
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         profileImageView.layer.cornerRadius = 3
         profileImageView.clipsToBounds = true
         
-        nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
+        tweetLabel.preferredMaxLayoutWidth = tweetLabel.frame.size.width
 
     }
 
@@ -51,7 +64,7 @@ class TableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        nameLabel.preferredMaxLayoutWidth = nameLabel.frame.size.width
+        tweetLabel.preferredMaxLayoutWidth = tweetLabel.frame.size.width
     }
 
 }

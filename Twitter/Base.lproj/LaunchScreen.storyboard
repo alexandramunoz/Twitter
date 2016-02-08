@@ -23,8 +23,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bigger Bird" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-TV-n0e">
-                                <rect key="frame" x="126" y="201" width="69" height="61"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Twitter_logo_blue_48" translatesAutoresizingMaskIntoConstraints="NO" id="hXP-Tu-ViC">
+                                <rect key="frame" x="102" y="215" width="117" height="79"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bigger Bird" width="48" height="48"/>
+        <image name="Twitter_logo_blue_48" width="16" height="16"/>
     </resources>
 </document>
