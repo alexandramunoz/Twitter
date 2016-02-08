@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] Added username to tweet cell
+- [X] Added username to tweet cell
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -33,7 +33,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/wJzyMWF.gif' title='Twitter' width='' alt='Twitter' />
+<img src='http://i.imgur.com/ACcIjAN.gif' title='Twitter' width='' alt='Twitter' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
