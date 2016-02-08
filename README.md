@@ -26,8 +26,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. How does replying to tweets on Twitter work?
+2. Making images for buttons show up
 
 ## Video Walkthrough 
 
@@ -39,7 +39,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I encountered difficulties pushing the app to GitHub, which led to my late submission. I also had difficulties incrementing the favorite and retweet count as it would not allow me to use the += operator on an Int and I was not able to go back to figure it out before the deadline as I tried to solve my issues with GitHub. 
+I encountered difficulties pushing the app to GitHub, which led to my late submission. I apologize for the late submission, and I will make sure that I start pushing and pulling my projects every time I add a new feature to the app to ensure that my work is submitted on time from now on. I also had difficulties incrementing the favorite and retweet count as it would not allow me to use the += operator on an Int and I was not able to go back to figure it out before the deadline as I tried to solve my issues with GitHub. 
 
 ## License
 
