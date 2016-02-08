@@ -20,19 +20,15 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var retweetsCountLabel: UILabel!
     
-    var user: User!{
-    didSet{
-        profileImageView.setImageWithURL(NSURL (string: user.profileImageUrl!)!)
-        nameLabel.text = user.name
-        usernameLabel.text = user.screenname
-    }
-    }
     var tweet: Tweet!{
     didSet{
     timeStampLabel.text = "\(tweet.createdAtString)"
     tweetLabel.text = tweet.text
     likesCountLabel.text = "\(tweet.likeCount)"
     retweetsCountLabel.text = "\(tweet.retweetCount)"
+        profileImageView.setImageWithURL(NSURL(string:(tweet.user?.profileImageUrl)!)!)
+    nameLabel.text = tweet.user!.name
+    usernameLabel.text = tweet.user!.screenname
     }
     }
     
