@@ -39,7 +39,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I encountered difficulties pushing the app to GitHub, which led to my late submission. 
+I encountered difficulties pushing the app to GitHub, which led to my late submission. I also had difficulties incrementing the favorite and retweet count as it would not allow me to use the += operator on an Int and I was not able to go back to figure it out before the deadline as I tried to solve my issues with GitHub. 
 
 ## License
 
