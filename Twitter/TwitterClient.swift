@@ -35,6 +35,29 @@ class TwitterClient: BDBOAuth1SessionManager {
             })
         
     }
+    
+    func favoriteTweetWithParams(params: NSDictionary?, completion: (id: Int?, error:NSError?)->()){
+        POST("1.1/favorites/create.json"
+            , parameters: params, success: { (operation: NSURLSessionDataTask, response: AnyObject) -> Void in
+                var id = params!["id"] as? Int
+                completion(id: id, error: nil)
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                completion(id: nil, error: error)
+        }
+    }
+   
+    func retweetTweetWithParams(params: NSDictionary?, completion: (id: Int?, error: NSError?) -> ()){
+        let id = params!["id"] as! Int
+        POST("1.1/statuses/retweet/\(id).json", parameters: params, success: { (operation:NSURLSessionDataTask, response: AnyObject) -> Void in
+            completion(id: id, error: nil)
+            }) { (operation: NSURLSessionDataTask?, error: NSError) -> Void in
+                completion(id:nil, error: error)
+        }
+        
+    }
+
+    
+    
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()){
         loginCompletion = completion
         
@@ -51,6 +74,8 @@ class TwitterClient: BDBOAuth1SessionManager {
         }
         
     }
+    
+    
     func openURL(url: NSURL){
         fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: BDBOAuth1Credential(queryString: url.query), success: { (accessToken: BDBOAuth1Credential!) -> Void in
             print("Got the access token!")

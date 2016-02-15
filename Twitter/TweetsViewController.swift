@@ -47,10 +47,36 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TableViewCell", forIndexPath: indexPath) as! TableViewCell
         
-        cell.tweet = tweets![indexPath.row]
+        let tweet = tweets![indexPath.row]
+        
+        cell.tweet = tweet
+        
+        cell.timeStampLabel.text = tweet.createdAtString
+        cell.tweetLabel.text = tweet.text
+        cell.likesCountLabel.text = String(tweet.likeCount!)
+        cell.retweetsCountLabel.text = String(tweet.retweetCount!)
+        cell.profileImageView.setImageWithURL(NSURL(string:(tweet.user?.profileImageUrl)!)!)
+        cell.nameLabel.text = tweet.user!.name
+        cell.usernameLabel.text = "@\(String(tweet.user!.screenname!))"
         
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let tweet = tweets![indexPath!.row]
+        
+        let tweetDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
+        tweetDetailsViewController.tweet = tweet
+        
+        print("prepare for segue called")
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+    }
+
 
     /*
     // MARK: - Navigation

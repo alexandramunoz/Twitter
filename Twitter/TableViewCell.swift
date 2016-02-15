@@ -20,30 +20,30 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var retweetsCountLabel: UILabel!
     
-    var tweet: Tweet!{
-    didSet{
-    timeStampLabel.text = tweet.createdAtString
-    tweetLabel.text = tweet.text
-    likesCountLabel.text = String(tweet.user!.likeCount!)
-    retweetsCountLabel.text = String(tweet.retweetCount!)
-        profileImageView.setImageWithURL(NSURL(string:(tweet.user?.profileImageUrl)!)!)
-    nameLabel.text = tweet.user!.name
-    usernameLabel.text = "@\(String(tweet.user!.screenname!))"
-    }
-    }
-   
+    var tweet: Tweet!
     
     
-    
-    @IBAction func didPressRetweet(sender: AnyObject) {
+    @IBAction func didPressRetweet(sender: UIButton) {
+        let id = tweet.id!
+        
+        var idDict = ["id" : id] as! NSDictionary
+        
+        TwitterClient.sharedInstance.retweetTweetWithParams(idDict) { (id, error) -> () in
+        }
         self.tweet.retweetCount!++
         retweetsCountLabel.text = ("\(tweet.retweetCount!)")
     }
-    
-    @IBAction func didPressFavorite(sender: AnyObject) {
-        self.tweet.user!.likeCount!++
-        likesCountLabel.text = ("\(tweet.user!.likeCount!)")
+
+  
+    @IBAction func didPressFavorite(sender: UIButton) {
+        let id = tweet.id!
         
+        var idDict = ["id" : id] as! NSDictionary
+        
+        TwitterClient.sharedInstance.favoriteTweetWithParams(idDict) { (id, error) -> () in
+        }
+        self.tweet.likeCount!++
+        likesCountLabel.text = ("\(tweet.likeCount!)")
     }
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,5 +66,4 @@ class TableViewCell: UITableViewCell {
         
         tweetLabel.preferredMaxLayoutWidth = tweetLabel.frame.size.width
     }
-
 }
