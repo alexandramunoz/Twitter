@@ -64,14 +64,25 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let cell = sender as! UITableViewCell
+        if let cell = sender as? UITableViewCell {
         let indexPath = tableView.indexPathForCell(cell)
         let tweet = tweets![indexPath!.row]
         
         let tweetDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
         tweetDetailsViewController.tweet = tweet
+        }
         
+        if let button = sender as? UIButton{
+            let cell = sender?.superview!!.superview as? UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell!)
+            let user = tweets![indexPath!.row].user
+            let profileViewController = segue.destinationViewController as! ProfileViewController
+            profileViewController.user = user
+
+        }
         print("prepare for segue called")
+        }
+    
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
@@ -87,5 +98,3 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
     }
     */
-
-}
