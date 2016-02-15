@@ -64,7 +64,7 @@ I was able to implement the last requirement into the app (user can retweet and 
 
 # Project 5 - *Twitter*
 
-Time spent: **X** hours spent in total
+Time spent: **9** hours spent in total
 
 ## User Stories
 
@@ -110,7 +110,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Received errors about domain and serialization when method to compose tweets was called. http://i.imgur.com/I3mo0ip.png
 
 ## License
 
