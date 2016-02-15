@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     var user: User?
     
     override func viewDidLoad() {
@@ -28,13 +29,15 @@ class ProfileViewController: UIViewController {
         profileImageView.layer.cornerRadius = 3.0
         profileImageView.layer.borderWidth = 3
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        if user!.headerImageUrl != nil{
         headerImageView.setImageWithURL(NSURL(string:(user!.headerImageUrl)!)!)
-        
+        }
          numberOfTweetsLabel.text = "\(user!.tweetsCount!) tweets"
         followingLabel.text = "\(user!.followingCount!) following"
         followersLabel.text = "\(user!.followersCount!) followers"
         nameLabel.text = user!.name
         usernameLabel.text = "@\(String(user!.screenname!))"
+        descriptionLabel.text = String(user!.userDescription!)
         
 
         // Do any additional setup after loading the view.
