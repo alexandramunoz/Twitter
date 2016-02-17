@@ -22,7 +22,7 @@ class ComposeTweetViewController: UIViewController {
     }
 
     @IBAction func didPressTweet(sender: AnyObject) {
-        let tweet = tweetTextField.text?.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        let tweet = tweetTextField.text
         
         TwitterClient.sharedInstance.composeTweet(tweet!)
         
