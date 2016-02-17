@@ -104,7 +104,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/wtYAxXV.gif' title='Twitter Week 2' width='' alt='Twitter Week 2' />
+<img src='http://i.imgur.com/sx0kpaC.gif' title='Twitter App Week 2' width='' alt='Twitter App Week 2' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
