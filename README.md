@@ -39,11 +39,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-I encountered difficulties pushing the app to GitHub, which led to my late submission. I apologize for the late submission, and I will make sure that I start pushing and pulling my projects every time I add a new feature to the app to ensure that my work is submitted on time from now on. I also had difficulties incrementing the favorite and retweet count as it would not allow me to use the += operator on an Int and I was not able to go back to figure it out before the deadline as I tried to solve my issues with GitHub. 
-
-Update: 
-
-I was able to implement the last requirement into the app (user can retweet and favorite and count is incremented). I would like to apologize again for my late submission and am hoping that I can use this as my one and only late submission that we are allowed to have during the class. I will not miss any classes, and as mentioned above, I will start pushing updates to my projects to GitHub as I complete them so that I do not arrive at midnight without having anything submitted. I did commit my updates before 11:59 so the features of the app were there (as seen in http://i.imgur.com/9PTfqYP.png, which shows that the project was committed before 11:59) but I had difficulty with the pulling in the repository. I will not make this mistake again and will seek help sooner if I find myself having trouble with GitHub again. Thank you. 
+I encountered difficulties pushing the app to GitHub, which led to my late submission. I apologize for the late submission, and I will make sure that I start pushing and pulling my projects every time I add a new feature to the app to ensure that my work is submitted on time from now on. 
 
 ## License
 
